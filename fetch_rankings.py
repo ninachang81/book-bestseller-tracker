@@ -34,7 +34,7 @@ def parse_books_top(text, source):
 all_results = []
 
 with sync_playwright() as p:
-    browser = p.chromium.launch(headless=False)
+    browser = p.chromium.launch(headless=True)
     page = browser.new_page()
 
     for source, url in SITES:
