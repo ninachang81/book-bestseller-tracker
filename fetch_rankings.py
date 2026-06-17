@@ -39,7 +39,7 @@ with sync_playwright() as p:
 
     for source, url in SITES:
         print(f"正在抓取：{source}")
-        page.goto(url, wait_until="networkidle", timeout=60000)
+       page.goto(url, wait_until="domcontentloaded", timeout=120000)
         page.wait_for_timeout(8000)
 
         text = page.locator("body").inner_text()
